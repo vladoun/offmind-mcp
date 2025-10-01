@@ -1,24 +1,26 @@
 # Offmind MCP Server
 
-MCP (Model Context Protocol) server for accessing your Offmind tasks in Claude Desktop and Claude Code.
+MCP (Model Context Protocol) server for accessing your Offmind tasks in Claude Desktop, Claude Code, and Perplexity.
 
 ### What is this?
 
-This is a **lightweight MCP client** that connects Claude to your Offmind tasks through a secure proxy API. It handles:
+This is a **lightweight MCP client** that connects AI assistants to your Offmind tasks through a secure proxy API. It handles:
 - 🔐 **Secure authentication** via Google OAuth
 - 🔄 **Automatic token refresh** with Firebase ID tokens
 - 📦 **Zero configuration** - no Firebase credentials needed locally
 
-## 🚀 Quick Install
+## 🚀 Installation
 
-### Method 1: One-Click Install (Easiest)
+### For Claude Desktop
+
+#### Method 1: One-Click Install (Easiest)
 
 1. Download [offmind-mcp.mcpb](https://github.com/vladoun/offmind-mcp/releases/latest/download/offmind-mcp.mcpb)
 2. Open **Claude Desktop** → **Settings** → **Extensions** → **Advanced Settings**
 3. Click **"Install Extension..."** and select the downloaded `.mcpb` file
 4. Restart Claude Desktop
 
-### Method 2: Manual Configuration
+#### Method 2: Manual Configuration
 
 1. Open **Claude Desktop** → **Settings** → **Developer** → **Edit Config**
 2. Add this configuration:
@@ -39,6 +41,19 @@ This is a **lightweight MCP client** that connects Claude to your Offmind tasks 
 ```
 
 3. Restart Claude Desktop
+
+### For Perplexity (Mac)
+
+1. Open **Perplexity** → **Settings** → **Connectors**
+2. Install **PerplexityXPC** helper app (if prompted)
+3. Click **Add Connector** → **Simple** tab
+4. Configure:
+   - **Server Name**: `Offmind Tasks`
+   - **Command**: `~/.local/bin/uvx --from git+https://github.com/vladoun/offmind-mcp offmind-mcp`
+5. Click **Save** and verify status shows "Running"
+6. Go to Perplexity homepage and toggle the MCP on under **Sources**
+
+**Note:** Make sure you have `uv` installed first: `curl -LsSf https://astral.sh/uv/install.sh | sh`
 
 ## 🔐 Authentication
 
