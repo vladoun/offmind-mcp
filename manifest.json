@@ -1,0 +1,27 @@
+{
+  "manifest_version": "1.0",
+  "name": "offmind-mcp",
+  "version": "0.1.0",
+  "description": "Access and manage your Offmind tasks directly from Claude Desktop",
+  "icon": "✅",
+  "author": {
+    "name": "vladoun"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "src/server.py",
+    "mcp_config": {
+      "command": "${HOME}/.local/bin/uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/vladoun/offmind-mcp",
+        "offmind-mcp"
+      ],
+      "platform_overrides": {
+        "win32": {
+          "command": "uvx"
+        }
+      }
+    }
+  }
+}
