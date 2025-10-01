@@ -36,7 +36,7 @@ class AppContext:
 async def app_lifespan(server: FastMCP) -> AsyncIterator[AppContext]:
     """Manage application lifecycle with API client initialization."""
     # Hardcoded configuration
-    api_url = "https://offmind-proxy-7ukisjajrq-ew.a.run.app"
+    api_url = "https://offmind-proxy-798066310667.europe-west1.run.app"
     firebase_api_key = "AIzaSyAlwhSoC3xMsn2jgVzAy1sNebaXnbAxvOY"
 
     # Initialize Firebase Auth manager and API client
